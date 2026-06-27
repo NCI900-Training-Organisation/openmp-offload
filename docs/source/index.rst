@@ -20,21 +20,20 @@ Contents
     :maxdepth: 1
     :caption: Setup and Prerequisites
 
-    prerequisite.rst
-    outcomes.rst  
-    modules.rst
-    packages.rst
-    use-jupyterlab.md
-    are_errors.rst
+      prerequisite.rst
+      outcomes.rst  
+      modules.rst
+      packages.rst
+      use-jupyterlab.md
+      are_errors.rst
 
 .. toctree::
-    :maxdepth: 4
+    :maxdepth: 1
     :caption: Tutorial
     :numbered:
-    
-    tutorial/intro.rst
-    tutorial/tutorial.rst
-    tutorial/sample-notebook.ipynb
-    references
+   
+      tutorial/tutorial.rst
+      tutorial/sample-notebook.ipynb
+      references
 
    

@@ -11,36 +11,19 @@ Describe the tutorial here.
     - Material
     - Exercises
     - Duration
-  * - Requesting a Job
+  * - Baseline Code
     - 10 minutes
     - 10 minutes
     - 20 minutes
-  * - High-level HPC Architecture
-    - 20 minutes
+  * - OMP Target
     - 15 minutes
-    - 35 minutes
-  * - Basic of Parallelism
-    - 20 minutes
-    - 15 minutes
-    - 35 minutes
-  * - Vector Parallelism
-    - 20 minutes
     - 10 minutes
-    - 30 minutes
-  * - Multi-core Parallelism
-    - 20 minutes
-    - 10 minutes
-    - 30 minutes
-  * - GPU Parallelism
-    - 30 minutes
-    - 15 minutes
-    - 45 minutes
-  * - Multi-node Parallelism
-    - 20 minutes
-    - 15 minutes
-    - 35 minutes
+    - 25 minutes
+
+
 
 
 .. toctree::
 
-    tutorial/intro.rst
+    tutorial/monte_carlo.rst
+    tutorial/target.rst

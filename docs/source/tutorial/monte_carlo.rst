@@ -74,6 +74,12 @@ program to scale efficiently as more processing resources are added.
       :language: c
       :linenos:
 
+.. exercise:: Exercise01: CPU parallelisation
+
+   .. literalinclude:: ../../../exercises/2_pi_omp.c
+      :language: c
+      :linenos:
+
 
 .. note:: 
 

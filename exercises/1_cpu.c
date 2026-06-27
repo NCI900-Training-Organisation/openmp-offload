@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <omp.h>
 
 int main(void)
 {
@@ -7,8 +8,10 @@ int main(void)
 
     long inside = 0;
 
-    for (long i = 0; i < N; i++) {
+    double start = omp_get_wtime();
 
+    for (long i = 0; i < N; i++)
+    {
         unsigned int seed = (unsigned int)i;
 
         float x =
@@ -19,10 +22,13 @@ int main(void)
             (float)rand_r(&seed) /
             (float)RAND_MAX;
 
-        if (x * x + y * y <= 1.0f) {
+        if (x * x + y * y <= 1.0f)
+        {
             inside++;
         }
     }
+
+    double end = omp_get_wtime();
 
     double pi =
         4.0 * (double)inside /
@@ -30,7 +36,8 @@ int main(void)
 
     printf("Points: %ld\n", N);
     printf("Inside: %ld\n", inside);
-    printf("Pi ≈ %.10f\n", pi);
+    printf("Pi ~= %.10f\n", pi);
+    printf("Execution Time = %.6f seconds\n", end - start);
 
     return 0;
 }

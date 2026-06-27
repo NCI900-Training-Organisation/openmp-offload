@@ -70,7 +70,7 @@ program to scale efficiently as more processing resources are added.
 
 .. exercise:: Exercise00: Calculate the value of :math:`\pi` using the Monte Carlo method
 
-   .. literalinclude:: ../../../exercises/1_cpu.c
+   .. literalinclude:: ../../../exercises/1_pi_serial.c
       :language: c
       :linenos:
 

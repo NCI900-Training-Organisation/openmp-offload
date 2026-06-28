@@ -1,21 +1,42 @@
-Name of the Workshop
+Introduction to OpenMP Offload
 =================================================
 
-This repository provides an introduction to the concepts of parallel programming using Python.
+This repository provides an introduction to the concepts of GPU offloading in OpenMP.
 
 .. note::
 
-   This project is a template for creating documentation for NCI training workshops.  
-   Please update the `index.rst`; setting tables in `use-jupyterlab.md` (delete page if not used) and `conf.py` to match the workshop.
-   Add content files under `docs/source/tutorial`. Content can be `rst`, `md` or `ipynb` files, thanks to the `myst-nb` extension. 
-   
-.. note::
-   To configure the markdown format, see the `conf.py` file.
+   This is not an introductory course. Participants should have a solid understanding of C programming 
+   and be familiar with the basics of OpenMP.
 
 
 
 Contents
 --------
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Working on Gadi
+  :numbered:
+
+  access.rst
+  modules.rst
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Tutorials
+  :numbered:
+
+  tutorial/monte_carlo.rst
+  tutorial/target.rst
+
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Tutorials
+  :numbered:
+
+  tutorial/monte_carlo.rst
+  tutorial/target.rst
 
 .. toctree::
   :maxdepth: 2

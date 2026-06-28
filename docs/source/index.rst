@@ -16,24 +16,14 @@ This repository provides an introduction to the concepts of parallel programming
 
 Contents
 --------
-.. toctree::
-    :maxdepth: 1
-    :caption: Setup and Prerequisites
-
-      prerequisite.rst
-      outcomes.rst  
-      modules.rst
-      packages.rst
-      use-jupyterlab.md
-      are_errors.rst
 
 .. toctree::
-    :maxdepth: 1
-    :caption: Tutorial
-    :numbered:
-   
-      tutorial/tutorial.rst
-      tutorial/sample-notebook.ipynb
-      references
+  :maxdepth: 2
+  :caption: Tutorials
+  :numbered:
+
+  tutorial/monte_carlo.rst
+  tutorial/target.rst
+
 
    

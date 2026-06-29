@@ -34,6 +34,12 @@ Contents
   tutorial/low_level.rst
   tutorial/declare.rst
   tutorial/team_optimisation.rst
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Reference
+  :numbered:
+
   references.rst
 
 

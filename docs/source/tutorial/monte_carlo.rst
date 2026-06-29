@@ -1,4 +1,4 @@
-Value of :math:`\pi`
+Value of Pi
 ====================
 
 

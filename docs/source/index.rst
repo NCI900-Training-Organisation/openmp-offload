@@ -1,7 +1,7 @@
 Introduction to OpenMP Offload
 =================================================
 
-This repository provides an introduction to the concepts of GPU offloading in OpenMP.
+This repository provides hands-on examples that demonstrate GPU offloading with OpenMP.
 
 .. note::
 
@@ -30,21 +30,7 @@ Contents
   tutorial/target.rst
 
 
-.. toctree::
-  :maxdepth: 1
-  :caption: Tutorials
-  :numbered:
 
-  tutorial/monte_carlo.rst
-  tutorial/target.rst
-
-.. toctree::
-  :maxdepth: 2
-  :caption: Tutorials
-  :numbered:
-
-  tutorial/monte_carlo.rst
-  tutorial/target.rst
 
 
    

@@ -28,6 +28,7 @@ Contents
 
   tutorial/monte_carlo.rst
   tutorial/target.rst
+  tutorial/teams.rst
 
 
 

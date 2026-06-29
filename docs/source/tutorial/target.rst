@@ -16,11 +16,11 @@ At a high level, ``target`` enables *device offloading*:
 
 
 
-.. exercise:: Exercise03: OpenMP Target
+**Exercise03: OpenMP Target**:
 
-   .. literalinclude:: ../../../exercises/3_target.c
-      :language: c
-      :linenos:
+.. literalinclude:: ../../../exercises/3_target.c
+   :language: c
+   :linenos:
 
 
 .. note::
@@ -33,11 +33,12 @@ At a high level, ``target`` enables *device offloading*:
    - ``OMP_TARGET_OFFLOAD=DISABLED``: disables GPU offloading, runs everything on CPU.
 
 
-.. exercise:: Exercise04: OpenMP Target
+**Exercise04: OpenMP Target**:
 
-   .. literalinclude:: ../../../exercises/4_set_target.c
-      :language: c
-      :linenos:
+.. literalinclude:: ../../../exercises/4_set_target.c
+   :language: c
+   :linenos:
+
 
 
 

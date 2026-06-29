@@ -68,17 +68,17 @@ This means the work can be divided among multiple CPU threads or GPU
 threads with very little communication or synchronisation, allowing the
 program to scale efficiently as more processing resources are added.
 
-.. exercise:: Exercise00: Calculate the value of :math:`\pi` using the Monte Carlo method
+**Exercise00: Calculate the value of :math:`\pi` using the Monte Carlo method**:
 
-   .. literalinclude:: ../../../exercises/1_pi_serial.c
-      :language: c
-      :linenos:
+.. literalinclude:: ../../../exercises/1_pi_serial.c
+   :language: c
+   :linenos:
 
-.. exercise:: Exercise01: CPU parallelisation
+**Exercise01: CPU parallelisation**:
 
-   .. literalinclude:: ../../../exercises/2_pi_omp.c
-      :language: c
-      :linenos:
+.. literalinclude:: ../../../exercises/2_pi_omp.c
+   :language: c
+   :linenos:
 
 
 .. note:: 

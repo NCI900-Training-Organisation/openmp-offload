@@ -34,6 +34,7 @@ Contents
   tutorial/low_level.rst
   tutorial/declare.rst
   tutorial/team_optimisation.rst
+  tutorial/unified_memory.rst
 
 .. toctree::
   :maxdepth: 1

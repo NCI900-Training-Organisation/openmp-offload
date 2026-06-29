@@ -30,6 +30,9 @@ Contents
   tutorial/target.rst
   tutorial/teams.rst
   tutorial/distribute.rst
+  tutorial/data_movement.rst
+  tutorial/persistant_data.rst
+  tutorial/low_level.rst
 
 
 

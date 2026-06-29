@@ -19,7 +19,6 @@ Contents
   :numbered:
 
   access.rst
-  modules.rst
 
 .. toctree::
   :maxdepth: 2

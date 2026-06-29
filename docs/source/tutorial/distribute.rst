@@ -4,9 +4,7 @@ Distributing Compute
 
 The directive:
 
-.. code::
-    :language: c
-    :linenos:
+.. code-block:: c
 
     #pragma omp target teams distribute parallel for reduction(+:inside)
 

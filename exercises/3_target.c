@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <omp.h>
 
-int main(void)
+int main()
 {
     printf("Host: initial device %d\n", omp_get_initial_device());
     printf("Total devices: %d\n", omp_get_num_devices());

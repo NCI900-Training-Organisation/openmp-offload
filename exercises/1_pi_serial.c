@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <omp.h>
 
-int main(void)
+int main()
 {
     const long N = 100000000;
 

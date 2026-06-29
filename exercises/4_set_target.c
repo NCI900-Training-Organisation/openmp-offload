@@ -11,7 +11,7 @@ int main()
 
     printf("Default device: %d\n", omp_get_default_device());
 
-    #pragma omp target device(0) map(tofrom:inside)
+    #pragma omp target teams
     for (long i = 0; i < N; i++)
     {
         // Simple GPU-safe deterministic RNG (LCG-style hashing)

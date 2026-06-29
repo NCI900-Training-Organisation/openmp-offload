@@ -34,7 +34,7 @@ Contents
   tutorial/persistant_data.rst
   tutorial/low_level.rst
   tutorial/declare.rst
-  team_optimisation.rst
+  tutorial/team_optimisation.rst
 
 
 

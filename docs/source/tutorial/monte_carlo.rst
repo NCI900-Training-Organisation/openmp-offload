@@ -68,7 +68,7 @@ This means the work can be divided among multiple CPU threads or GPU
 threads with very little communication or synchronisation, allowing the
 program to scale efficiently as more processing resources are added.
 
-**Exercise00: Calculate the value of :math:`\pi` using the Monte Carlo method**:
+**Exercise00: Calculate the value of Pi using the Monte Carlo method**:
 
 .. literalinclude:: ../../../exercises/1_pi_serial.c
    :language: c

@@ -1,6 +1,5 @@
-Unified_shared_memory
+Unified Memory
 ===========================================
-
 
 
 The directive ``#pragma omp requires unified_shared_memory`` enables

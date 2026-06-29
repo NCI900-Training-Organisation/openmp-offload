@@ -169,3 +169,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+exercises/a.out
+
+exercises/10_alloc_delete  
+exercises/12_declare_fail  
+exercises/1_pi_serial 
+exercises/3_target     
+exercises/5_parallel  
+exercises/7_all_together   
+exercises/9_dynamic_arrays
+exercises/11_low_level     
+exercises/13_declare      
+exercises/2_pi_omp  
+exercises/4_set_target 
+exercises/6_team     
+exercises/8_static_arrays 
+

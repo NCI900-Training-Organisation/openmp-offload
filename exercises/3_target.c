@@ -9,13 +9,8 @@ int main()
 
     #pragma omp target
     {
-        printf("Inside target region\n");
-        printf("Device num (inside target): %d\n", omp_get_device_num());
-
-        for (int i = 0; i < 10; i++)
-        {
-            printf("%d\n", i);
-        }
+        printf("Device thread ID: %d\n", omp_get_thread_num());
+        printf("Total device threads: %d\n", omp_get_num_threads());
     }
 
     return 0;

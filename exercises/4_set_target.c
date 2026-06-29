@@ -5,35 +5,25 @@
 int main()
 {
     const long N = 100000000;
-
     long inside = 0;
 
     double start = omp_get_wtime();
 
     printf("Default device: %d\n", omp_get_default_device());
 
-    #pragma omp target device(1) map(tofrom:inside)
+    #pragma omp target device(0) map(tofrom:inside)
+    for (long i = 0; i < N; i++)
     {
+        // Simple GPU-safe deterministic RNG (LCG-style hashing)
+        unsigned int seed = (unsigned int)(i * 1664525u + 1013904223u);
 
-        printf("Inside target region\n");
-        printf("Device num (inside target): %d\n", omp_get_device_num());
-        
-        for (long i = 0; i < N; i++)
+        // Convert bits into [0,1]
+        float x = (seed & 0xFFFF) / (float)0xFFFF;
+        float y = ((seed >> 16) & 0xFFFF) / (float)0xFFFF;
+
+        if (x * x + y * y <= 1.0f)
         {
-            unsigned int seed = (unsigned int)i;
-
-            float x =
-                (float)rand_r(&seed) /
-                (float)RAND_MAX;
-
-            float y =
-                (float)rand_r(&seed) /
-                (float)RAND_MAX;
-
-            if (x * x + y * y <= 1.0f)
-            {
-                inside++;
-            }
+            inside++;
         }
     }
 

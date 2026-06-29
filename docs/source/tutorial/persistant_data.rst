@@ -124,6 +124,26 @@ The following example demonstrates a typical workflow for persistent device data
     the device according to the `map` clauses, executes the kernel on the accelerator, copies the 
     results back to the host if needed, and then frees the device memory once the region completes.
 
+
+.. note::
+
+   OpenMP map-type modifiers:
+
+   - ``always``: forces data transfer every time  
+     Example: ``map(always, to:A[0:N])``
+
+   - ``close``: hint to allocate memory close to device  
+     Example: ``map(close, to:A[0:N])``
+
+   - ``mapper(mapper-identifier)``: uses user-defined mapper  
+     Example: ``map(mapper(my_mapper), to:obj)``
+
+   - ``present``: requires data already on device (error if not)  
+     Example: ``map(present, to:A[0:N])``
+
+   - ``iterator(iterators-definition)``: defines iterators in mapping  
+     Example: ``map(iterator(i=0:N), to:A[i])``
+
 .. admonition:: Key Points
    :class: hint
 

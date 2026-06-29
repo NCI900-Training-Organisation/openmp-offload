@@ -33,6 +33,13 @@ If threads per team is too high:
 
 - occupancy may drop due to resource contention
 
+
+**Exercise14: Optimising team launches**:
+
+.. literalinclude:: ../../../exercises/14_team_optimise.c
+   :language: c
+   :linenos:
+
 Optimisation Strategy
 ---------------------
 A good tuning strategy is typically:

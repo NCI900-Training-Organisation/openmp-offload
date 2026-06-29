@@ -5,15 +5,7 @@ Declare Target
 to execute code on the GPU and `map` clauses to explicitly control data transfer between host and device.
 
 
-**Exercise13: Declare target**:
-
-.. literalinclude:: ../../../exercises/13_declare.c
-   :language: c
-   :linenos:
-
-
-
- ``declare target`` for Variables
+``declare target`` for Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: c
@@ -59,6 +51,13 @@ to execute code on the GPU and `map` clauses to explicitly control data transfer
     - Function becomes available on the device
 
     - It does not move data by itself
+
+
+**Exercise13: Declare target**:
+
+.. literalinclude:: ../../../exercises/13_declare.c
+   :language: c
+   :linenos:
 
 
 .. admonition:: Key Points

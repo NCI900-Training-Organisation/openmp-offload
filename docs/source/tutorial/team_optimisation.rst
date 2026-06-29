@@ -1,4 +1,4 @@
-Optimising Threads per Team i
+Team optimisation
 =============================
 
 In GPUs, performance is strongly influenced by how work is partitioned across:

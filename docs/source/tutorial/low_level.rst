@@ -74,6 +74,10 @@ This approach is more complex but gives full control and better insight into per
 | Safer                  | Closer to CUDA style       |
 +------------------------+---------------------------+
 
+.. note::
+
+    What happens if you remove `is_device_ptr`?
+
 .. admonition:: Key Points
    :class: hint
 

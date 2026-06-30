@@ -112,6 +112,11 @@ OpenMP uses this information to
 
 - copy the results back.
 
+
+.. note::
+
+    What happens if index of array `B` starts from 0, instead of 1?
+
 Common Mapping Types
 --------------------
 

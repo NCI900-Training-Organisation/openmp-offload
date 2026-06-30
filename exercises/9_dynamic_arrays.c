@@ -7,7 +7,7 @@
 int main(void)
 {
     int *A = (int *)malloc(N * sizeof(int));
-    int *B = (int *)malloc(N * sizeof(int));
+    int *B = (int *)malloc((N+1) * sizeof(int));
     int *C = (int *)malloc(N * sizeof(int));
 
     if (!A || !B || !C) {
@@ -21,12 +21,13 @@ int main(void)
         B[i] = 2 * i;
         C[i] = 0;
     }
+    B[N] = 2 * N;
 
     // Offload computation to the GPU
-    #pragma omp target map(to: A[0:N], B[0:N]) map(from: C[0:N])
+    #pragma omp target map(to: A[0:N], B[1:N]) map(from: C[0:N])
     {
         for (int i = 0; i < N; i++) {
-            C[i] = A[i] + B[i];
+            C[i] = A[i] + B[i + 1]; // OpenMP preserves host indexes.
         }
     }
 

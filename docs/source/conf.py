@@ -1,7 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
 
-
-
 project = 'OpenMP Offloading'
 copyright = '2026, National Computational Infrastructure'
 author = 'NCI Training'

@@ -5,6 +5,11 @@ Unified Memory
 The directive ``#pragma omp requires unified_shared_memory`` enables
 OpenMP Unified Shared Memory (USM) semantics for the program.
 
+.. note::
+
+   Although ``unified_shared_memory`` is part of the OpenMP 5.x specification,
+   it may not be  supported by the NVIDIA HPC SDK.
+
 It specifies that the program assumes a **single shared memory address space
 between host and target devices**, allowing pointers to be directly used on
 both without explicit data mapping.
@@ -31,12 +36,6 @@ When this directive is used:
 This directive shifts OpenMP programming from an **explicit data-movement model**
 (using ``map`` clauses) to a **shared-memory programming model**, making GPU
 offloading behave more like standard multithreaded CPU programming.
-
-
-.. note::
-
-   Although ``unified_shared_memory`` is part of the OpenMP 5.x specification,
-   it may not be  supported by the NVIDIA HPC SDK.
 
 
 .. admonition:: Key Points

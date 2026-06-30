@@ -1,0 +1,7 @@
+pi serial = 1.039395
+
+pi omp = 0.921500
+
+target = 8.572717
+
+alltogether = 0.161982

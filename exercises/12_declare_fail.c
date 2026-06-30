@@ -23,4 +23,3 @@ int main()
 
     printf("%f\n", B[5]);
 }
-

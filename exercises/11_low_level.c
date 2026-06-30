@@ -31,7 +31,7 @@ int main(void)
                       device, omp_get_initial_device());
 
     // 4. GPU computation using device pointers
-    #pragma omp target is_device_ptr(A_d, B_d, C_d)
+    #pragma omp target is_device_ptr(A_d, B_d, C_d) // OpenMP assume all pointers are host pointers
     {
         for (int i = 0; i < N; i++) {
             C_d[i] = A_d[i] + B_d[i];

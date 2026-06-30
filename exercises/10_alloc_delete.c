@@ -12,7 +12,7 @@ int main(void)
     #pragma omp target enter data map(alloc: A[0:N])
 
     // Initialize the array entirely on the GPU.
-    #pragma omp target teams distribute parallel for is_device_ptr(A)
+    #pragma omp target teams distribute parallel for 
     for (int i = 0; i < N; i++) {
         A[i] = i;
     }

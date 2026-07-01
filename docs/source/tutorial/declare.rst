@@ -59,6 +59,10 @@ to execute code on the GPU and `map` clauses to explicitly control data transfer
    :language: c
    :linenos:
 
+.. note::
+
+    Are you getting the expected output? Why not?
+
 
 .. admonition:: Key Points
    :class: hint

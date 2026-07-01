@@ -1,1 +1,1 @@
-module load nvidia-hpc-sdk/21.3
+module load nvidia-hpc-sdk/21.3 cuda/11.6.1 

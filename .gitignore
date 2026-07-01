@@ -189,4 +189,5 @@ exercises/8_static_arrays
 exercises/14_team_optimise
 exercises/15_unified_mem
 exercises/16_simd
+exercises/17_cuda_code
 

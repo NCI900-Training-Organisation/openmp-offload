@@ -5,3 +5,5 @@ pi omp = 0.921500
 target = 8.572717
 
 alltogether = 0.161982
+
+simd = 0.152669

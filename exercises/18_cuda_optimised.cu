@@ -4,8 +4,6 @@
 
 #define N 100000000ULL
 
-// We still keep the hash to prevent identical random sequences across threads,
-// but each thread only uses it to generate exactly two numbers (x and y).
 __device__ uint32_t hash_seed(uint32_t seed) {
     seed = (seed ^ 61) ^ (seed >> 16);
     seed *= 9;
@@ -30,26 +28,43 @@ __device__ float random_float(uint32_t *state)
     return xorshift32(state) * (1.0f / 4294967295.0f); 
 }
 
-__global__ void monte_carlo_pi_unoptimized(unsigned long long total_samples, unsigned long long *global_inside)
+__global__ void monte_carlo_pi(unsigned long long total_samples, unsigned long long *global_inside)
 {
-    // Calculate global thread ID
-    unsigned long long i = (unsigned long long)blockIdx.x * blockDim.x + threadIdx.x;
+    __shared__ unsigned long long s_inside[256];
 
-    // Guard to ensure threads outside N do not execute
-    if (i < total_samples)
+    int tid = threadIdx.x;
+    long long global_id = blockIdx.x * blockDim.x + threadIdx.x;
+    long long stride = blockDim.x * gridDim.x;
+
+    uint32_t seed = hash_seed((uint32_t)global_id + 1);
+    unsigned long long local_count = 0;
+
+    for (long long i = global_id; i < total_samples; i += stride)
     {
-        // Initialize seed once for this thread's single calculation
-        uint32_t seed = hash_seed((uint32_t)i + 1);
-
-        // Each thread calculates exactly ONE point
         float x = random_float(&seed);
         float y = random_float(&seed);
 
         if (x * x + y * y <= 1.0f)
         {
-            // Unoptimized: All 100 million threads contend for this single global variable
-            atomicAdd(global_inside, 1ULL);
+            local_count++;
         }
+    }
+
+    s_inside[tid] = local_count;
+    __syncthreads();
+
+    for (int s = blockDim.x / 2; s > 0; s >>= 1)
+    {
+        if (tid < s)
+        {
+            s_inside[tid] += s_inside[tid + s];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0)
+    {
+        atomicAdd(global_inside, s_inside[0]);
     }
 }
 
@@ -61,9 +76,8 @@ int main()
     cudaMalloc(&d_inside, sizeof(unsigned long long));
     cudaMemcpy(d_inside, &h_inside, sizeof(unsigned long long), cudaMemcpyHostToDevice);
 
-    // Define execution configuration to cover exactly N elements
     int threads = 256;
-    unsigned long long blocks = (N + threads - 1) / threads; 
+    int blocks = 512; 
 
     // --- CUDA Event Configuration ---
     cudaEvent_t start, stop;
@@ -73,13 +87,13 @@ int main()
     // Record the start event
     cudaEventRecord(start);
 
-    // Launch Kernel with enough blocks to give every single sample its own thread
-    monte_carlo_pi_unoptimized<<<blocks, threads>>>(N, d_inside);
+    // Launch Kernel
+    monte_carlo_pi<<<blocks, threads>>>(N, d_inside);
 
     // Record the stop event
     cudaEventRecord(stop);
 
-    // Wait for the stop event to finish on the GPU
+    // Wait for the stop event to complete on the GPU
     cudaEventSynchronize(stop);
 
     // Calculate the elapsed time
@@ -92,9 +106,9 @@ int main()
     double pi = 4.0 * (double)h_inside / (double)N;
 
     printf("Pi = %.10f\n", pi);
-    printf("Unoptimized Kernel Execution Time: %.4f ms\n", milliseconds);
+    printf("Kernel Execution Time: %.4f ms\n", milliseconds);
 
-    // Clean up
+    // Clean up events
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
     cudaFree(d_inside);

@@ -22,7 +22,7 @@ OMP_EXECS = $(OMP_SRCS:.c=)
 # -------------------------
 # CUDA sources
 # -------------------------
-CUDA_SRCS = 17_cuda_code.cu
+CUDA_SRCS = 17_cuda_code.cu 18_cuda_optimised.cu
 CUDA_EXECS = $(CUDA_SRCS:.cu=)
 
 # -------------------------

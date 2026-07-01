@@ -1,9 +1,13 @@
-pi serial = 1.039395
+pi serial = 1.039395 s
 
-pi omp = 0.921500
+pi omp = 0.921500 s
 
-target = 8.572717
+target = 8.572717 s
 
-alltogether = 0.161982
+alltogether = 0.161982 s
 
-simd = 0.152669
+simd = 0.152669 s
+
+cuda unoptimised = 2.5999 ms
+
+cuda optimised  =  0.3062 ms
